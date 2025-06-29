@@ -2,15 +2,27 @@ import { blogPlugin } from '@vuepress/plugin-blog'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
+import { markdownHintPlugin } from '@vuepress/plugin-markdown-hint'
+import { markdownImagePlugin } from "@vuepress/plugin-markdown-image";
+import { markdownTabPlugin } from '@vuepress/plugin-markdown-tab';
 
 export default defineUserConfig({
-  lang: 'en-US',
+  lang: 'fr-FR',
 
-  title: 'VuePress',
-  description: 'My first VuePress Site',
+  title: 'Anthony tient un blog',
+  description: 'c\'est comme les livres Martine mais pas vraiment',
 
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: 'logo.jpeg',
+
+    themePlugins: {
+      prismjs: {
+        themes: {
+          dark: "one-dark",
+          light: "one-light",
+        }
+      }
+    },
 
     navbar: [
       '/',
@@ -134,6 +146,28 @@ export default defineUserConfig({
         },
       ],
       hotReload: true,
+    }),
+    markdownHintPlugin({
+      // Enable hint container, true by default
+      hint: true,
+      // Enable gfm alert
+      alert: true,
+    }),
+    markdownImagePlugin({
+      // Enable figure
+      figure: true,
+      // Enable image lazyload
+      lazyload: true,
+      // Enable image mark
+      mark: true,
+      // Enable image size
+      size: true,
+    }),
+    markdownTabPlugin({
+      // Enable code tabs
+      codeTabs: true,
+      // Enable tabs
+      tabs: true,
     }),
   ],
 
