@@ -13,7 +13,7 @@ export default defineUserConfig({
   description: 'c\'est comme les livres Martine mais pas vraiment',
 
   theme: defaultTheme({
-    logo: 'logo.jpeg',
+    logo: '/images/logo.jpeg',
 
     themePlugins: {
       prismjs: {
