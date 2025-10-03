@@ -36,7 +36,7 @@ Mais nous, on s’en fous, nous on est sur Angular, et on a rien.. **jusqu’en 
 
 [Spartan](https://github.com/spartan-ng/spartan) est sortie avec un pitch très simple: *et si Base UI, mais genre dans un framework qui commence pas à sentir le paracetamol ?*  
 
-![Une grand-mère se faisant aider par une assistante](react.png '"De mon temps, on avait 20 balises jsx de configuration de libraries a la base du projet" oui oui c\'est bien mamie')
+![Une grand-mère se faisant aider par une assistante](/assets/posts/headless-ui-library/react.png '"De mon temps, on avait 20 balises jsx de configuration de libraries a la base du projet" oui oui c\'est bien mamie')
   
 La librairie `spartan/ui` est composé de deux parties: `spartan/brain` et `spartain/helm`.
 
@@ -175,13 +175,13 @@ ng g @spartan-ng/cli:ui
 
 La commande va vous demander les composants que vous voulez utiliser dans votre application
 
-![Le retour de la commande `ng g @spartan-ng/cli:ui` =200x](spartan-primitives.png)
+![Le retour de la commande `ng g @spartan-ng/cli:ui` =200x](/assets/posts/headless-ui-library/spartan-primitives.png)
 
 Une fois les composant sélectionné en utilisant la touche `Espace`, appuyez sur `Entrée` pour valider **L'installation des primitives**
 
 Et la, votre projet contient maintenant un dossier avec la totalité des composants sélectionné !
 
-![La liste de composants généré par la commande =200x](spartan-components-list.png)
+![La liste de composants généré par la commande =200x](/assets/posts/headless-ui-library/spartan-components-list.png)
 
 Chaque dossier contient le composant en question, mais le code est surprenamment court...
 
@@ -275,7 +275,7 @@ export class App {}
 
 :::
 
-![Le composant Select de Spartan Helm dans le style par défaut](spartan-helm-select.png)
+![Le composant Select de Spartan Helm dans le style par défaut](/assets/posts/headless-ui-library/spartan-helm-select.png)
 
 Alors faisons un petit topo de ce que nous avons :
 
@@ -400,7 +400,7 @@ export class App {
 
 :::
 
-![Le composant Select de Spartan Brain sans aucun style](spartan-brain-select.gif 'Ah... oui... quand on disait aucun style c\'était pas vraiment AUCUN style')
+![Le composant Select de Spartan Brain sans aucun style](/assets/posts/headless-ui-library/spartan-brain-select.gif 'Ah... oui... quand on disait aucun style c\'était pas vraiment AUCUN style')
 
 C'est vide, mais au final, c'est l'idée, et aussi la force de la librairie, nous pouvons faire notre propre wrapper pour ce composant, comme les wrappers généré pour Helm au final !
 
