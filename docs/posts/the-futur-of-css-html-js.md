@@ -10,13 +10,13 @@ tag:
 
 # Les nouveautés des languages web (présent et futur)
 
-Avec les avancées technologique de ces dernières années, notre workflow a pas mal changé, notament avec l'arrivée des LLM;
-il est maintenant plus simple que jamais de prendre une solution préfaite à un problème et de vite passer a la suite.
+Avec les avancées technologiques de ces dernières années, notre workflow a pas mal changé, notament avec l'arrivée des LLM;
+il est maintenant plus simple que jamais de prendre une solution déjà faite à un problème et de vite passer a la suite.
 
-Néanmoins, il est également plus simple que jamais d'ignorer les nouvelles améliorations aux languages qu'on utilise quotidiennement,
-et qui pourrait simplifier encore plus le code d'une IA entrainné sur de code stack overflow d'il y a 5 ans !
+Néanmoins, il est également plus simple que jamais d'ignorer les nouvelles améliorations des languages qu'on utilise quotidiennement,
+et qui pourrait simplifier encore plus le code d'une IA entraînée sur de code stack overflow d'il y a 5 ans !
 
-C'est pourquoi j'avais envie de commencer un petit tour d'horizon pour montrer les nouveautés déjà sortie ou sur le point de sortir côté HTML, CSS et JS — qui sait, peut-être que la solution à 20 lignes généré par Copilot pouvais être faite en 2 lignes grace à une feature sortie il y a 3 ans !
+C'est pourquoi j'avais envie de commencer un petit tour d'horizon pour montrer les nouveautés déjà sorties ou sur le point de sortir côté HTML, CSS et JS — qui sait, peut-être que la solution à 20 lignes généré par Copilot pouvais être faite en 2 lignes grace à une feature sortie il y a 3 ans !
 
 ## HTML
 
@@ -193,9 +193,9 @@ Avec les container queries, on pourrait en faire un seul et même composant qui 
 
 Alors déjà, si vous ne connaisais pas les Itérateurs, petite aparté rapide:
 
-Il est probable que vous ne voyais jamais un code utilisant réellement les itérateurs, même elles ont leur utilité !
+Il est probable que vous ne voyiez jamais un code utilisant réellement les itérateurs, même si elles ont leur utilité !
 
-Par example, voici un code permettant de boucler sur une liste d'utilisateurs dans un Azure Active Directory, ou l'appel http est paginée
+Par example, voici un code permettant de boucler sur une liste d'utilisateurs dans un Azure Active Directory, ou l'appel http est paginé
 
 ```ts
 function async *paginatedMemberList(
