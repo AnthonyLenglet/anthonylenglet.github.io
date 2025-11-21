@@ -2,8 +2,8 @@
 date: 2025-06-30
 category:
   - Veille
-tag:
   - Front
+tag:
   - Angular
   - Librairies
 ---
