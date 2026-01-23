@@ -14,9 +14,9 @@ Avec les avancées technologiques de ces dernières années, notre workflow a pa
 il est maintenant plus simple que jamais de prendre une solution déjà faite à un problème et de vite passer a la suite.
 
 Néanmoins, il est également plus simple que jamais d'ignorer les nouvelles améliorations des languages qu'on utilise quotidiennement,
-et qui pourrait simplifier encore plus le code d'une IA entraînée sur de code stack overflow d'il y a 5 ans !
+et qui pourraient simplifier encore plus le code d'une IA entraînée sur du code stack overflow d'il y a 5 ans !
 
-C'est pourquoi j'avais envie de commencer un petit tour d'horizon pour montrer les nouveautés déjà sorties ou sur le point de sortir côté HTML, CSS et JS — qui sait, peut-être que la solution à 20 lignes généré par Copilot pouvais être faite en 2 lignes grace à une feature sortie il y a 3 ans !
+C'est pourquoi j'avais envie de commencer un petit tour d'horizon pour montrer les nouveautés déjà sorties ou sur le point de sortir côté HTML, CSS et JS — qui sait, peut-être que la solution à 20 lignes généré par Copilot pouvait être faite en 2 lignes grace à une feature sortie il y a 3 ans !
 
 ## HTML
 
