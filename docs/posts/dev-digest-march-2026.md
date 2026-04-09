@@ -10,14 +10,14 @@ tag:
 
 # La veille du mois : Mars 2026
 
-Ah mais vous êtes la vous ? Bah alors comment ils vont depuis le temps ?
-Ca tombe bien, j'allais faire un tour des nouveautés dans le web, asseyez-vous, je vais vous montrer tout ça !
+Ah mais vous êtes là vous ? Bah alors comment ils vont depuis le temps ?
+Ça tombe bien, j'allais faire un tour des nouveautés dans le web, asseyez-vous, je vais vous montrer tout ça !
 
 ## Côté HTML
 
 ### Element Select personalisable
 
-La dernière fois que j'en avais parlé, la feature n'était disponible que sur des versions relativement récente de chromium, à savoir que Safari à sortie le support de son côté également en Technical Preview, il devrait donc être disponible dans la prochaine version majeur de safari au plus tard, soit avec la sortie de la prochaine version de MacOS !
+La dernière fois que j'en avais parlé, la feature n'était disponible que sur des versions relativement récentes de chromium, à savoir que Safari a sorti le support de son côté également en Technical Preview, il devrait donc être disponible dans la prochaine version majeure de Safari au plus tard, soit avec la sortie de la prochaine version de MacOS !
 
 <style src="./driver-select.css"></style>
 
@@ -179,9 +179,9 @@ body:has(#la-veille-du-mois-mars-2026) .vp-navbar::after {
 }
 ```
 
-Dans ce cas, on attache une animation a la barre qui change sa taille, et on précise que la position dans l'animation est dicté par la progression du scroll actuel dans la page !
+Dans ce cas, on attache une animation à la barre qui change sa taille, et on précise que la position dans l'animation est dictée par la progression du scroll actuel dans la page !
 
-Et si vous vous posez la question, oui, on peux aussi faire une animation quand un élément entre dans la viewport !
+Et si vous vous posez la question, oui, on peut aussi faire une animation quand un élément entre dans la viewport !
 
 <style>
 .fancy-animation {
@@ -243,9 +243,9 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 }
 ```
 
-Ici, l'animation commence quand 5% de l'élément est visible, et ce termine quand 500% est visible (ce qui permet de faire durer l'animation plus longtemps pour l'exemple, idéalement, l'animation est terminé avant que l'élément (une card par example) soit pleinement visible)
+Ici, l'animation commence quand 5% de l'élément est visible, et se termine quand 500% est visible (ce qui permet de faire durer l'animation plus longtemps pour l'exemple, idéalement, l'animation est terminée avant que l'élément (une card par exemple) soit pleinement visible)
 
-Tout les navigateurs supportent la feature... sauf Firefox, ou c'est encore derrière un flag.
+Tous les navigateurs supportent la feature... sauf Firefox, ou c'est encore derrière un flag.
 
 ### Grid lanes (Autrefois Masonry Layout)
 
@@ -253,9 +253,9 @@ Mise en scène: il est 10h, un designer vous envoie un design, vous l'ouvrez et 
 
 ![Un example de layout "Masonry"](/assets/posts/dev-digest-march-2026/grid-lanes.png)
 
-Une fois passé la crisse d'angoisse, comment faites-vous ?
+Une fois passée la crisse d'angoisse, comment faites-vous ?
 
-Aujourd'hui, la solution est d'utiliser une librairie comme [masonry-layout](https://www.npmjs.com/package/masonry-layout) pour le faire, et n'essayer pas de faire quelque chose de dynamique, puisque chaque chargement d'image, changement de taille ou quelqu'onque mise à jour du DOM demande un nouvel appel à la fonction `layout()` de la librairie !
+Aujourd'hui, la solution est d'utiliser une librairie comme [masonry-layout](https://www.npmjs.com/package/masonry-layout) pour le faire, et n'essayez pas de faire quelque chose de dynamique, puisque chaque chargement d'image, changement de taille ou quelconque mise à jour du DOM demande un nouvel appel à la fonction `layout()` de la librairie !
 
 ...Ou alors, [vous bossez sur un site qui ne doit marcher que sur Safari](https://webkit.org/blog/17660/introducing-css-grid-lanes/)
 
@@ -299,7 +299,7 @@ article {
 }
 ```
 
-Alors on peux être rassuré, si votre navigateur est à jour, vous pouvez activer le feature flag "experimental web features" (le nom differ selon les navigateur, mais globalement c'est plus ou moins ça), et [la demo devrait être fonctionnelle pour vous aussi](https://webkit.org/demos/grid3/newspaper/), ça arrive bientôt !
+Alors on peut être rassuré, si votre navigateur est à jour, vous pouvez activer le feature flag "experimental web features" (le nom diffère selon les navigateurs, mais globalement c'est plus ou moins ça), et [la demo devrait être fonctionnelle pour vous aussi](https://webkit.org/demos/grid3/newspaper/), ça arrive bientôt !
 
 <iframe class="ciu_embed" src="https://caniuse.pengzhanbo.cn/css-grid-lanes#past=2&future=3&theme=light" height="447px" scrolling="no"></iframe>
 
@@ -318,11 +318,11 @@ textarea.example {
 
 <textarea id="example" name="example" class="example"></textarea>
 
-T'as vu, ça change de taille selon le text, cool non ?
+T'as vu, ça change de taille selon le texte, cool non ?
 
 Une ligne de CSS. `field-sizing: content;`.
 
-J'ai du coder ça sur un projet angular, c'est une directive de 50 lignes qui clone la textarea avec une nouvelle taille, et supprime l'ancien à chaque nouvel input.
+J'ai dû coder ça sur un projet angular, c'est une directive de 50 lignes qui clone la textarea avec une nouvelle taille, et supprime l'ancienne à chaque nouvel input.
 
 C'est dispo sur chrome depuis 2024, safari depuis novembre 2025.
 
@@ -333,7 +333,7 @@ Au revoir.
 ### if()
 
 Un dernier truc un peu moins récent, mais quand même notable;
-Je l'avais mentionné a la toute fin du dernier article, et c'était pas une blague, ça va faire un an le mois prochain qu'on peux faire ça dans les navigateurs chromium
+Je l'avais mentionné à la toute fin du dernier article, et c'était pas une blague, ça va faire un an le mois prochain qu'on peut faire ça dans les navigateurs chromium
 
 ```css
 .button {
@@ -382,11 +382,11 @@ Pour commencer, voici un exemple concret de l'API view transition:
   allowtransparency="true">
 </iframe>
 
-l'API View Transitions nous permet de marquer les elements du dom en cours de changement via un appel Javascript à `document.startViewTransition`, et de les animer via les règles CSS `::view-transition-old` et `::view-transition-new`
+L'API View Transitions nous permet de marquer les éléments du DOM en cours de changement via un appel Javascript à `document.startViewTransition`, et de les animer via les règles CSS `::view-transition-old` et `::view-transition-new`
 
-Point bonus, on peux aussi marquer les elements côté CSS via la règle `view-transition-name`, et laisser le navigateur animer le passage d'un endroit à un autre par lui même !
+Point bonus, on peut aussi marquer les éléments côté CSS via la règle `view-transition-name`, et laisser le navigateur animer le passage d'un endroit à un autre par lui même !
 
-Voici un autre example sur une table on ne peux plus classique, essayez de cliquer sur les headers "Release Year" et "Rating" pour réordonner les lignes !
+Voici un autre exemple sur une table on ne peut plus classique, essayez de cliquer sur les headers "Release Year" et "Rating" pour réordonner les lignes !
 
 <iframe
   height="500"
@@ -401,27 +401,27 @@ Voici un autre example sur une table on ne peux plus classique, essayez de cliqu
 
 Vous pouvez aussi jouer avec le code CSS, vous remarquerez que la seule ligne de CSS qui permet d'avoir cette animation est la ligne `view-transition-name: match-element;` !
 
-si vous voulez un example encore plus impressionant: [voici une liste de playlist avec une animation à l'ouverture géré automatiquement par le navigateur !](https://live-transitions.pages.dev/)
+Si vous voulez un exemple encore plus impressionnant : [voici une liste de playlist avec une animation à l'ouverture gérée automatiquement par le navigateur !](https://live-transitions.pages.dev/)
 
 ![Extrait du code CSS pour l'example partagé ci-dessus =300x](/assets/posts/dev-digest-march-2026/code-view-transition-name.png 'Voici un extrait du code source pour les animations, on nomme les items pour indiquer au navigateur quelles elements sont lié avant et après la transition !')
 
-en l'état, avec les animations au scroll, nous avons de quoi passer outre des librairies comme GSAP pour nos animations sur le web, la seule feature qui rendrait cet API encore plus incroyable, ça serait de pouvoir faire des animations d'une page HTML à une autre...
+En l'état, avec les animations au scroll, nous avons de quoi passer outre des librairies comme GSAP pour nos animations sur le web, la seule feature qui rendrait cette API encore plus incroyable, ça serait de pouvoir faire des animations d'une page HTML à une autre...
 
 [Ça tombe bien, voila un example d'animation d'une page html à une autre sans aucune ligne de JS !](https://moritzglantz.de/multi-page-view-transitions-demo/index.html)
 
-Cerise sur le gateau, cette API est pleinement supporté, donc aucun problème à l'utiliser dès aujourd'hui !
+Cerise sur le gâteau, cette API est pleinement supportée, donc aucun problème à l'utiliser dès aujourd'hui !
 
 <iframe class="ciu_embed" src="https://caniuse.pengzhanbo.cn/view-transitions#past=2&future=3&theme=light" height="492px" scrolling="no"></iframe>
 
-[Voici un gros tutoriel plus complet en français pour apprendre a pleinement utiliser les View Transitions !](https://www.julienpradet.fr/tutoriels/view-transitions/)
+[Voici un gros tutoriel plus complet en français pour apprendre à pleinement utiliser les View Transitions !](https://www.julienpradet.fr/tutoriels/view-transitions/)
 
-(Pfiou ! beaucoup de liens pour celui la, mais on en à forcément besoin pour comprendre la puissance du truc !)
+(Pfiou ! beaucoup de liens pour celui-là, mais on en a forcément besoin pour comprendre la puissance du truc !)
 
 ### Temporal
 
-Après 9 ans en cours de développement, l'API [Temporal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal) est passé au Stage 4, ce qui signifie qu'elle est maintenant final, et soit implémenté soit en phase finale d'implémentation dans tout les navigateurs !
+Après 9 ans en cours de développement, l'API [Temporal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal) est passée au Stage 4, ce qui signifie qu'elle est maintenant finale, et soit implémentée soit en phase finale d'implémentation dans tous les navigateurs !
 
-[Je vous partage l'article de blog de Jason Williams, ingénieur chez Bloomberg et personne qui à eu le courage de bosser sur les dates pendant tout ce temps](https://bloomberg.github.io/js-blog/post/temporal/)
+[Je vous partage l'article de blog de Jason Williams, ingénieur chez Bloomberg et personne qui a eu le courage de bosser sur les dates pendant tout ce temps](https://bloomberg.github.io/js-blog/post/temporal/)
 
 ![=500x](/assets/posts/dev-digest-march-2026/temporal-cake.png)
 
@@ -431,4 +431,4 @@ Après 9 ans en cours de développement, l'API [Temporal](https://developer.mozi
 
 &nbsp;
 
-Et voila ! avec ça, je pense qu'avec ça vous avez de quoi jouer jusqu'au prochain article de veille, ou après m'être focus sur la partie HTML et CSS, je vais probablement me focus sur la partie JS !
+Et voilà ! avec ça, je pense que vous avez de quoi jouer jusqu'au prochain article de veille, ou après m'être focus sur la partie HTML et CSS, je vais probablement me focus sur la partie JS !
