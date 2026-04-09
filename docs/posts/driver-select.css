@@ -1,0 +1,304 @@
+@import url(https://fonts.bunny.net/css?family=jura:300,500);
+@layer base, controls,demo;
+
+@layer demo {
+  :root{
+  	interpolate-size: allow-keywords;
+		
+		--select-transition-duration: 500ms;
+		
+    /* select element */
+    --select-width: 100px;
+    --select-padding: .25rem .75rem;
+    --select-radius: min(5px,10px);
+    --select-text-color: light-dark(rgb(113, 113, 123),rgb(245 245 245));
+    --select-bg-color: light-dark(rgb(202, 213, 226), rgb(255 255 255 / .05));
+    --select-bg-color-hover: light-dark(rgb(228 228 231),rgb(0 105 168));
+    --select-border-color: 1px solid light-dark(rgb(212 212 216),rgb(0 105 168));
+
+		/* :picker options wrapper */
+    --picker-size: min(90vw, 600px);
+    --picker-bg-color: rgb(0 0 0 /.5);
+    --picker-border: 1px solid var(--clr-lines);
+		--picker-padding: 20px;
+    --picker-gap: 20px;
+    --picker-radius: 20px;
+
+		/* options */
+    --option-size: var(--select-width);
+    --option-padding: 0;
+    --option-bg-color: light-dark(rgb(202, 213, 226), rgb(255 255 255 / .05));
+    --option-bg-color-hover: rgb(0 105 168 / 1);
+    --option-bg-color-selected: dodgerblue;
+		--option-border: none;
+    --option-border-color: var(--clr-lines);
+		--option-font-size: .8rem;
+    --option-text-color: light-dark(rgb(10, 113, 123), rgb(255 255 255));
+    --option-text-color-hover: white;
+    --option-text-color-selected: white;
+    --option-radius: min(5px,10px);
+		
+		/* button > selected element - essentially the same as the option styling in this demo */
+		--selected-element-radius: var(--select-radius);
+		--selected-element-padding: 1rem;
+    --selected-element-bg-color: rgb(255 255 255 / .1);
+    --selected-element-bg-color-hover: rgb(0 105 168 / 1);
+		--selected-element-text-color: var(--option-text-color);
+    --selected-element-border-color: var(--option-border-color);
+    
+  }
+  
+  /* base select styles for non supporting browsers */
+  select {
+    width: var(--select-width);
+		margin-inline: auto;
+    margin-block-end: 10px;
+    background-color: var(--select-bg-color);
+		color: var(--sellecttext-color);
+    padding: var(--select-padding);
+    border: var(--select-border-color);
+    border-radius: var(--select-radius);
+    transition: 
+      background-color var(--select-transition-duration) ease-in-out,
+      outline var(--select-transition-duration) ease-in-out,
+      scale var(--select-transition-duration) ease-in-out;
+    &:hover,
+    &:focus,
+    &:active {
+      /*scale: 1.1;*/
+      background-color: var(--select-bg-color-hover);
+    }
+    &:focus-visible{
+      outline: 1px dashed dodgerblue;
+      outline-offset: 5px;
+    }
+    selectedcontent > svg,
+    
+    /* hide "menu" option */
+    option:first-of-type{
+      display: none;
+    }
+ 	}
+  label{
+    transition: opacity 150ms ease-in-out;
+  }
+
+	
+  /* only if the browser supports custom select lists */
+  @supports (appearance: base-select) {
+    &:has(select:open) label{
+      opacity:0;
+    }
+    select,::picker(select) {
+      appearance: base-select;
+    }
+    select{
+      position: relative;
+      aspect-ratio: 1;
+      border: none;
+      padding: 0;
+      border-radius: var(--selected-element-radius);
+			/* no arrow */
+      &::picker-icon {
+        display: none;
+      }
+
+      /* options list wrapper */
+      &::picker(select) {
+        pointer-events: none;
+        position: relative;
+        position-area: span-all; /* position over select element */
+        width: var(--picker-size);
+        border: none;
+        opacity: 0;
+        scale: 0;
+        padding: var(--picker-padding);
+        background: var(--picker-bg-color);
+        border-radius: var(--picker-radius);
+        transition: all var(--select-transition-duration) allow-discrete;
+				backdrop-filter: blur(2px);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @media (width > 600px){
+          grid-template-columns: repeat(5, 1fr);
+        }
+        gap: var(--picker-gap);
+        grid-auto-flow: row dense;
+      }
+      /* scale and opacity in when open */
+      &:open::picker(select) {
+        pointer-events: auto;
+        opacity: 1;
+        scale: 1;
+        @starting-style{
+          opacity: 0;
+          scale: .4;
+        }
+      }
+
+
+      
+      /* images and svgs for bnoth button and options */
+      selectedcontent svg,
+      img{
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: inherit;
+        transition: 
+          scale calc(var(--select-transition-duration) / 2) ease-in-out,
+          filter var(--select-transition-duration) ease-in-out;
+      }
+      img{
+        transform-origin: bottom;
+        scale: var(--img-scale, 1);
+        filter: 
+          grayscale(var(--img-filter,1)) 
+          drop-shadow(2px 2px 1px  var(--img-shadow-color,transparent));
+      }
+
+      /* options and selectedcontent share many properties */
+      option,selectedcontent{
+        cursor: pointer;
+        position: relative;
+        color: attr(data-color type(<color>)); /* just for the options */
+        padding: var(--option-padding);
+				border: 1px solid;
+        border-radius: var(--option-radius);
+        background-color: var(--option-bg-color);
+        outline: 1px dashed transparent;
+        isolation: isolate;
+        clip-path:polygon(0 -50%, 100% -50%, 100% 100%, 0 100%);
+        transition: 
+            outline var(--select-transition-duration) ease-in-out,
+            opacity var(--select-transition-duration) ease-in-out,
+            scale calc(var(--select-transition-duration) / 2) ease-in-out ,
+            background-color var(--select-transition-duration) ease-in-out;
+        
+        /* team & driver with bg block */
+        &::before,
+        &::after,
+        span{
+            position: absolute;
+            inset: auto 0 0;
+            padding: .35em;
+            color:white;
+            text-align: center;
+            text-wrap:wrap;
+            font-size: .8rem;
+            transition: all calc(var(--select-transition-duration) / 2)  ease-in-out;
+            z-index: 2;
+          }
+          /*  container behined text */
+          &:not(:nth-child(2))::before{
+            content: '\00A0';
+            background-color: rgb(1 1 1 / var(--data-bg-opacity, 0.9));
+            backdrop-filter: bllur(3px);
+            border-top: 1px solid attr(data-color type(<color>));
+            border-radius: 0 0 var(--option-radius) var(--option-radius);
+            z-index: 1;
+          }
+          
+          /* driver name - displayed on hover */
+          span{
+            opacity: 1;
+            translate: var(--data-name-x,100%) 0;
+          }
+          /* drive team - visible by default */
+          &::after{
+            content: attr(data-team);
+            translate: var(--data-team-x,0) 0;
+          }
+      }
+      
+
+      /* selectedcontent = selected option display within button */
+      selectedcontent {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-content: center;
+				border-color: var(--selected-element-border-color);
+        background-color: var(--selected-element-bg-color);
+        color: var(--selected-element-text-color);
+        transform-origin:center;
+        --data-name-x: 0; /* show directly - no animation */
+        img{
+          filter: none;
+        }
+        svg{
+          translate: 0 -10px;
+        }
+      } 
+      &:open selectedcontent{
+        scale: 0;
+      }
+
+      
+      option {
+        /* show "menu" icon as we can use this to "close" the select list with no selected option */
+        &:first-of-type{
+          /* place "menu" button in center of grid */
+          grid-column: 2;
+          grid-row: 4 / span 2;
+          aspect-ratio: 1;
+          align-self: center;
+          scale: .8;
+          @media (width > 600px){
+            grid-column: 3;
+            grid-row: 3;
+          }
+          display: grid;
+          place-content: center;
+          opacity: 1;
+          svg{
+            display: block;
+          }
+          span{
+            display: none;
+          }
+          &:hover{
+            background: var(--option-bg-color-hover);
+          }
+        }
+        /* no checked mark on current selected option */
+        &::checkmark {
+          display: none;
+        }
+        /* selected option */
+        &:checked{
+           background-color: attr(data-color type(<color>));
+        }
+      }
+    	      
+			/* selected element and option labels on hover or focus */
+      
+      option:hover,
+      option:focus-visible{
+        --option-bg-color: attr(data-color type(<color>));/* use the team colors for the hover/focus option bg */
+        --img-filter: 0;
+        --img-scale: 1.18;
+        --img-shadow-color: white;
+        --data-team-x: -100%;
+        --data-name-x: 0;
+        --data-bg-opacity: .9;
+				&:focus-visible{
+          outline: 1px dashed white;
+          outline-offset: -5px;
+        }
+			} 
+      
+		} 
+  }
+}
+
+@layer base {
+	:root {
+		--line-light: rgba(0 0 0 / .25);
+		--line-dark: rgba(255 255 255 / .25);
+    
+    --clr-lines: light-dark(var(--line-light), var(--line-dark));
+	}
+}

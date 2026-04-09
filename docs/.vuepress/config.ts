@@ -1,8 +1,9 @@
-import { blogPlugin } from '@vuepress/plugin-blog'
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-import { viteBundler } from '@vuepress/bundler-vite'
-import { markdownHintPlugin } from '@vuepress/plugin-markdown-hint'
+import { blogPlugin } from '@vuepress/plugin-blog';
+import { defaultTheme } from '@vuepress/theme-default';
+import { defineUserConfig } from 'vuepress';
+import { viteBundler } from '@vuepress/bundler-vite';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
+import { markdownHintPlugin } from '@vuepress/plugin-markdown-hint';
 import { markdownImagePlugin } from "@vuepress/plugin-markdown-image";
 import { markdownTabPlugin } from '@vuepress/plugin-markdown-tab';
 
@@ -21,7 +22,8 @@ export default defineUserConfig({
           dark: "one-dark",
           light: "one-light",
         }
-      }
+      },
+      mediumZoom: false,
     },
 
     navbar: [
@@ -169,6 +171,9 @@ export default defineUserConfig({
       // Enable tabs
       tabs: true,
     }),
+    mediumZoomPlugin({
+      selector: '.image-zoomable img'
+    })
   ],
 
   bundler: viteBundler(),

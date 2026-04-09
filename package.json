@@ -11,14 +11,16 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.20",
-    "@vuepress/plugin-blog": "2.0.0-rc.86",
-    "@vuepress/plugin-markdown-hint": "2.0.0-rc.110",
-    "@vuepress/plugin-markdown-image": "2.0.0-rc.110",
-    "@vuepress/plugin-markdown-tab": "2.0.0-rc.110",
-    "@vuepress/theme-default": "2.0.0-rc.88",
+    "@vuepress/bundler-vite": "2.0.0-rc.28",
+    "@vuepress/plugin-blog": "2.0.0-rc.128",
+    "@vuepress/plugin-markdown-hint": "2.0.0-rc.128",
+    "@vuepress/plugin-markdown-image": "2.0.0-rc.128",
+    "@vuepress/plugin-markdown-tab": "2.0.0-rc.128",
+    "@vuepress/plugin-medium-zoom": "2.0.0-rc.128",
+    "@vuepress/theme-default": "2.0.0-rc.128",
     "sass-embedded": "^1.86.0",
+    "typescript": "^6.0.2",
     "vue": "^3.5.13",
-    "vuepress": "2.0.0-rc.20"
+    "vuepress": "2.0.0-rc.28"
   }
 }
